@@ -21,22 +21,19 @@ def is_merge_recursive(s, part1, part2):
         return part1 + part2 == ''
     if s[0] == part1[0] and is_merge_recursive(s[1:], part1[1:], part2):
         return True
-    if s[0] == part2[0] and is_merge_recursive(s[1:], part1, part2[1:]):
-        return True
-    return False
+    return bool(s[0] == part2[0] and is_merge_recursive(s[1:], part1, part2[1:]))
 
 
 # An iterative approach
 def is_merge_iterative(s, part1, part2):
     tuple_list = [(s, part1, part2)]
     while tuple_list:
-        string, p1, p2 = tuple_list.pop()            
+        string, p1, p2 = tuple_list.pop()
         if string:
             if p1 and string[0] == p1[0]:
                 tuple_list.append((string[1:], p1[1:], p2))
             if p2 and string[0] == p2[0]:
                 tuple_list.append((string[1:], p1, p2[1:]))
-        else:
-            if not p1 and not p2:
-                return True
+        elif not p1 and not p2:
+            return True
     return False

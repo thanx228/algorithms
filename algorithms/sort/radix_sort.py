@@ -11,7 +11,7 @@ def radix_sort(arr, simulation=False):
         print("iteration", iteration, ":", *arr)
 
     while position <= max_number:
-        queue_list = [list() for _ in range(10)]
+        queue_list = [[] for _ in range(10)]
 
         for num in arr:
             digit_number = num // position % 10

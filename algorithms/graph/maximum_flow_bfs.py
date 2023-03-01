@@ -70,8 +70,7 @@ def maximum_flow_bfs(adjacency_matrix):
         #Get minimum flow
         while tmp != 0:
             #find minimum flow
-            if min_flow > new_array[path[tmp]][tmp]:
-                min_flow = new_array[path[tmp]][tmp]
+            min_flow = min(min_flow, new_array[path[tmp]][tmp])
             tmp = path[tmp]
 
         #initial setting

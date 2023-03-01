@@ -40,6 +40,4 @@ def jump_search(arr,target):
 
     # if there is target value in array, return it
 
-    if arr[block_prev] == target :
-        return block_prev
-    return -1
+    return block_prev if arr[block_prev] == target else -1

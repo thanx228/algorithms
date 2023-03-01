@@ -12,15 +12,12 @@ Note: The idea is not to use any built-in libraries such as re (regular expressi
 # Non pythonic way
 def domain_name_1(url):
 	#grab only the non http(s) part
-    full_domain_name = url.split('//')[-1] 
+    full_domain_name = url.split('//')[-1]
     #grab the actual one depending on the len of the list  
     actual_domain = full_domain_name.split('.')  
-    
+
     # case when www is in the url
-    if (len(actual_domain) > 2):
-        return actual_domain[1]    
-    # case when www is not in the url
-    return actual_domain[0]
+    return actual_domain[1] if (len(actual_domain) > 2) else actual_domain[0]
 
 
 # pythonic one liner

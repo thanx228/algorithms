@@ -32,9 +32,7 @@ class Graph:
         """
         visited = [False] * self.vertex_count
         self.dfs_util(0,visited)
-        if visited == [True]*self.vertex_count:
-            return True
-        return False
+        return visited == [True]*self.vertex_count
 
     def dfs_util(self,source,visited):
         """

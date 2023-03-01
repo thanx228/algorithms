@@ -28,5 +28,5 @@ def comb_sort(arr):
             if arr[i] > arr[i + gap]:
                 swap(i, i + gap)
                 sorted = False
-            i = i + 1
+            i += 1
     return arr
