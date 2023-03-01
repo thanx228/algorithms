@@ -43,7 +43,5 @@ class Dijkstra():
             for target in range(self.vertex_count):
                 if self.graph[source][target] <= 0 or min_dist_set[target]:
                     continue
-                if dist[target] > dist[source] + self.graph[source][target]:
-                    dist[target] = dist[source] + self.graph[source][target]
-
+                dist[target] = min(dist[target], dist[source] + self.graph[source][target])
         return dist

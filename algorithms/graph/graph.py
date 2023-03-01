@@ -18,9 +18,7 @@ class Node:
         """
         if isinstance(obj, Node):
             return obj.name
-        if isinstance(obj, str):
-            return obj
-        return''
+        return obj if isinstance(obj, str) else ''
 
     def __eq__(self, obj):
         return self.name == self.get_name(obj)

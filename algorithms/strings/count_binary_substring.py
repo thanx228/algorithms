@@ -29,5 +29,4 @@ def count_binary_substring(s):
             cur = 1
         else:
             cur = cur + 1
-    count = count + min(pre, cur)
-    return count
+    return count + min(pre, cur)

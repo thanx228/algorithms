@@ -1,8 +1,6 @@
 def recursive(s):
     l = len(s)
-    if l < 2:
-        return s
-    return recursive(s[l//2:]) + recursive(s[:l//2])
+    return s if l < 2 else recursive(s[l//2:]) + recursive(s[:l//2])
 
 def iterative(s):
     r = list(s)

@@ -48,9 +48,9 @@ def bottom_left_invert(matrix):
 
 if __name__ == '__main__':
     def print_matrix(matrix, name):
-        print('{}:\n['.format(name))
+        print(f'{name}:\n[')
         for row in matrix:
-            print('  {}'.format(row))
+            print(f'  {row}')
         print(']\n')
 
     matrix = [
